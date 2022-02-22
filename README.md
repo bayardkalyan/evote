@@ -114,10 +114,8 @@ user interface and high security.
 
 ## Authors
 
-* **Sanat Taori**
-* **Akshay Motghare**
-* **Mandar Patil** 
-* **Aniket Narkhede**
+* **BAYARD KALYAN**
+* **NABIN LOHIA**
 
 ## License
 
