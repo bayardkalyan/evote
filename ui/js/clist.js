@@ -14,7 +14,7 @@ $('.modal').modal();
 	web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 	abi = JSON.parse('[{"constant":false,"inputs":[{"name":"candidate","type":"bytes32"}],"name":"totalVotesFor","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"candidate","type":"bytes32"}],"name":"validCandidate","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"bytes32"}],"name":"votesReceived","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"x","type":"bytes32"}],"name":"bytes32ToString","outputs":[{"name":"","type":"string"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"candidateList","outputs":[{"name":"","type":"bytes32"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"candidate","type":"bytes32"}],"name":"voteForCandidate","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"contractOwner","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"inputs":[{"name":"candidateNames","type":"bytes32[]"}],"payable":false,"type":"constructor"}]')
 	VotingContract = web3.eth.contract(abi);
-	contractInstance = VotingContract.at('0xa7fb89a3fe6927b6d272637b148775f6fee5a8cf');
+	contractInstance = VotingContract.at('0x460005bd940fd957DCB1d911B378FA3E6BF36aC7');
 	// candidates = {"Rama": "candidate-1", "Nick": "candidate-2", "Jose": "candidate-3"}
 
 
@@ -32,7 +32,8 @@ $('.modal').modal();
 
 	var aadhaar_list = {
 		"300000000000" : "Akola",
-		"738253790005" : "Bhandara"
+		"738253790005": "Bhandara",
+		"207333697345": "Bayard",
 	}
 
 	var aadhaar = readCookie('aadhaar');
@@ -57,33 +58,33 @@ $('.modal').modal();
 	}
 
 	$('#vote1').click(function(){
-		contractInstance.voteForCandidate('Sanat', {from: web3.eth.accounts[0]}, function() {
-		    alert('vote submited to Sanat');
+		contractInstance.voteForCandidate('Bayard', {from: web3.eth.accounts[0]}, function() {
+		    alert('vote submited to Bayard');
 		    disable();
-		    $('#loc_info').text('Vote submited successfully to Sanat')
+		    $('#loc_info').text('Vote submited successfully to Bayard')
 
 		});
 	})
 	$('#vote2').click(function(){
-		contractInstance.voteForCandidate('Aniket', {from: web3.eth.accounts[0]}, function() {
-		    alert('vote submited to Aniket');
+		contractInstance.voteForCandidate('Nabin', {from: web3.eth.accounts[0]}, function() {
+		    alert('vote submited to Nabin');
 		     disable();
-		     $('#loc_info').text('Vote submited successfully to Aniket')
+		     $('#loc_info').text('Vote submited successfully to Nabin')
 		});
 	})
 	$('#vote3').click(function(){
-		contractInstance.voteForCandidate('Mandar', {from: web3.eth.accounts[0]}, function() {
-		    alert('vote submited to Mandar');
+		contractInstance.voteForCandidate('Manas', {from: web3.eth.accounts[0]}, function() {
+		    alert('vote submited to Manas');
 		     disable();
 		      
-		      $('#loc_info').text('Vote submited successfully to Mandar')
+		      $('#loc_info').text('Vote submited successfully to Manas')
 		});
 	})
 	$('#vote4').click(function(){
-		contractInstance.voteForCandidate('Akshay', {from: web3.eth.accounts[0]}, function() {
-		    alert('vote submited to Akshay');
+		contractInstance.voteForCandidate('Sohil', {from: web3.eth.accounts[0]}, function() {
+		    alert('vote submited to Sohil');
 		     disable();
-		     $('#loc_info').text('Vote submited successfully to Akshay')
+		     $('#loc_info').text('Vote submited successfully to Sohil')
 		});
 	})
 });
